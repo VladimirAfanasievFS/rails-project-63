@@ -12,7 +12,7 @@ module HexletCode
   def self.form_for(user, args = {})
     url = args[:url] || "#"
     method = args[:method] || "post"
-    Tag.build("form", action: url, method:) do
+    Tag.build("form", action: url, method:, **args.slice(:class)) do
       checker = HexletCode::Checker.new(user)
       yield(checker)
       checker.output.join
