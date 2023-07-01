@@ -44,7 +44,7 @@ module HexletCode
                              name:,
                              type: html_options[:type] || "text",
                              value: @user[name],
-                             **html_options.slice(:class)
+                             **html_options.slice(%i[class method])
                            })
     end
   end

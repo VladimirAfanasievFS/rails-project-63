@@ -11,7 +11,8 @@ module HexletCode
 
   def self.form_for(user, args = {})
     url = args[:url] || "#"
-    Tag.build("form", action: url, method: "post") do
+    method = args[:method] || "post"
+    Tag.build("form", action: url, method:) do
       checker = HexletCode::Checker.new(user)
       yield(checker)
       checker.output.join
