@@ -1,3 +1,5 @@
+[![CI](https://github.com/VladimirAfanasievFS/rails-project-63/actions/workflows/main.yml/badge.svg)](https://github.com/VladimirAfanasievFS/rails-project-63/actions/workflows/main.yml)
+
 ## Installation
 
 Add it to your Gemfile:
