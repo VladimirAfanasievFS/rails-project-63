@@ -12,11 +12,10 @@ module HexletCode
 
     def input(name, html_options = {})
       @user.public_send(:name)
-
+      build_label(name)
       if html_options[:as] == :text
         build_textarea(name, html_options)
       else
-        build_label(name)
         build_input(name, html_options)
       end
     end
