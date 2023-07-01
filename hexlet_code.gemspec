@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Write a short summary, because RubyGems requires one."
   spec.description   = "Write a longer description or delete this line."
   spec.homepage      = "https://github.com/VladimirAfanasievFS/rails-project-63"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.1.2"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 

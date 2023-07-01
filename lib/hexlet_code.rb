@@ -3,7 +3,6 @@
 require_relative "hexlet_code/version"
 # require 'active_support'
 # require 'active_support/core_ext'
-
 module HexletCode
   class Error < StandardError; end
   autoload :Tag, "hexlet_code/tag"
@@ -18,5 +17,4 @@ module HexletCode
       checker.output.join
     end
   end
-
 end

@@ -14,21 +14,39 @@ module HexletCode
       @user.public_send(:name)
 
       if html_options[:as] == :text
-        @output << Tag.build("textarea",
-                             { name:, cols: html_options[:cols] || 20,
-                               rows: html_options[:rows] || 40, **html_options.slice("class") }) { @user[:job] }
+        build_textarea(name, html_options)
       else
-        pp @user
-        @output << Tag.build("label",
-                             { for: name }) { name.capitalize }
-        @output << Tag.build("input",
-                             { name:, type: html_options[:type] || "text",
-                               value: @user[name], **html_options.slice(:class) })
+        build_label(name)
+        build_input(name, html_options)
       end
     end
 
     def submit(name = "save")
       @output << Tag.build("input", type: "submit", value: name)
+    end
+
+    private
+
+    def build_textarea(name, html_options)
+      @output << Tag.build("textarea", {
+                             name:,
+                             cols: html_options[:cols] || 20,
+                             rows: html_options[:rows] || 40,
+                             **html_options.slice(:class)
+                           }) { @user[:job] }
+    end
+
+    def build_label(name)
+      @output << Tag.build("label", { for: name }) { name.capitalize }
+    end
+
+    def build_input(name, html_options)
+      @output << Tag.build("input", {
+                             name:,
+                             type: html_options[:type] || "text",
+                             value: @user[name],
+                             **html_options.slice(:class)
+                           })
     end
   end
 end

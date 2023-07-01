@@ -27,7 +27,8 @@ describe "Assertions" do
   #     f.input :name
   #     f.input :job, as: :text
   #   end
-  #   assert result == "<form action='#' method='post'><input name='name' type='text' value='rob'><textarea name='job' cols='20' rows='40'>hexlet</textarea></form>"
+  #   assert result == "<form action='#' method='post'><input name='name' type='text' value='rob'><textarea name='job'
+  #  cols='20' rows='40'>hexlet</textarea></form>"
   # end
 
   # it "test_form_for lastparam" do
@@ -38,7 +39,8 @@ describe "Assertions" do
   #     f.input :job
   #   end
 
-  #   assert result == "<form action='#' method='post'><input name='name' type='text' value='rob' class='user-input'><input name='job' type='text' value=''></form>"
+  #   assert result == "<form action='#' method='post'><input name='name' type='text' value='rob' class='user-input'>
+  # <input name='job' type='text' value=''></form>"
   # end
 
   # it "test form_for textbox rewrite default" do
@@ -48,7 +50,8 @@ describe "Assertions" do
   #     f.input :job, as: :text, rows: 50, cols: 50
   #   end
 
-  #   assert result == "<form action='#' method='post'><textarea cols='50' rows='50' name='job'>hexlet</textarea></form>"
+  #   assert result == "<form action='#' method='post'><textarea cols='50' rows='50' name='job'>
+  # hexlet</textarea></form>"
   # end
 
   it "test form_for with submit" do
@@ -60,6 +63,11 @@ describe "Assertions" do
       f.submit "Wow"
     end
 
-    assert result == "<form action='#' method='post'><label for='name'>Name</label><input name='name' type='text' value=''><label for='job'>Job</label><input name='job' type='text' value='hexlet'><input type='submit' value='Wow'></form>"
+    assert result == "<form action='#' method='post'>" \
+    "<label for='name'>Name</label>" \
+    "<input name='name' type='text' value=''>" \
+    "<label for='job'>Job</label>" \
+    "<input name='job' type='text' value='hexlet'>" \
+    "<input type='submit' value='Wow'></form>"
   end
 end
