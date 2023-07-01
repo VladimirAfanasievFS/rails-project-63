@@ -11,7 +11,7 @@ module HexletCode
     end
 
     def input(name, html_options = {})
-      @user.public_send(:name)
+      @user.public_send(name)
       build_label(name)
       if html_options[:as] == :text
         build_textarea(name, html_options)
