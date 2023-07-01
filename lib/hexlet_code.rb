@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "hexlet_code/version"
+require_relative 'hexlet_code/version'
 # require 'active_support'
 # require 'active_support/core_ext'
 module HexletCode
   class Error < StandardError; end
-  autoload :Tag, "hexlet_code/tag"
+  autoload :Tag, 'hexlet_code/tag'
 
-  autoload :Checker, "hexlet_code/checker"
+  autoload :Checker, 'hexlet_code/checker'
 
   def self.form_for(user, args = {})
-    url = args[:url] || "#"
-    method = args[:method] || "post"
-    Tag.build("form", action: url, method:, **args.slice(:class)) do
+    url = args[:url] || '#'
+    method = args[:method] || 'post'
+    Tag.build('form', action: url, method:, **args.slice(:class)) do
       checker = HexletCode::Checker.new(user)
       yield(checker)
       checker.output.join

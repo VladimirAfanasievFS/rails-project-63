@@ -4,7 +4,7 @@ module HexletCode
   # helper create Tag
   class Tag
     def self.build(name, args = {})
-      params = ""
+      params = ''
 
       args.each do |key, value|
         params = "#{params} #{key}='#{value}'"

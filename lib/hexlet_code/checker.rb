@@ -20,14 +20,14 @@ module HexletCode
       end
     end
 
-    def submit(name = "Save")
-      @output << Tag.build("input", type: "submit", value: name)
+    def submit(name = 'Save')
+      @output << Tag.build('input', type: 'submit', value: name)
     end
 
     private
 
     def build_textarea(name, html_options)
-      @output << Tag.build("textarea", {
+      @output << Tag.build('textarea', {
                              name:,
                              cols: html_options[:cols] || 20,
                              rows: html_options[:rows] || 40,
@@ -36,13 +36,13 @@ module HexletCode
     end
 
     def build_label(name)
-      @output << Tag.build("label", { for: name }) { name.capitalize }
+      @output << Tag.build('label', { for: name }) { name.capitalize }
     end
 
     def build_input(name, html_options)
-      @output << Tag.build("input", {
+      @output << Tag.build('input', {
                              name:,
-                             type: html_options[:type] || "text",
+                             type: html_options[:type] || 'text',
                              value: @user[name],
                              **html_options.slice(:class)
                            })
