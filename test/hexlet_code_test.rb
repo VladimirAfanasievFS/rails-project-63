@@ -60,7 +60,7 @@ describe "Assertions" do
     result = HexletCode.form_for user, url: "#" do |f|
       f.input :name
       f.input :job
-      f.submit "Wow"
+      f.submit "Save"
     end
 
     assert result == "<form action='#' method='post'>" \
@@ -68,6 +68,6 @@ describe "Assertions" do
     "<input name='name' type='text' value=''>" \
     "<label for='job'>Job</label>" \
     "<input name='job' type='text' value='hexlet'>" \
-    "<input type='submit' value='Wow'></form>"
+    "<input type='submit' value='Save'></form>"
   end
 end

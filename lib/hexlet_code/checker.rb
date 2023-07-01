@@ -21,7 +21,7 @@ module HexletCode
       end
     end
 
-    def submit(name = "save")
+    def submit(name = "Save")
       @output << Tag.build("input", type: "submit", value: name)
     end
 
