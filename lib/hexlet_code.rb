@@ -6,16 +6,13 @@ require_relative 'hexlet_code/version'
 module HexletCode
   class Error < StandardError; end
   autoload :Tag, 'hexlet_code/tag'
+  autoload :FormBuilder, 'hexlet_code/form_builder'
+  autoload :HtmlBuilder, 'hexlet_code/html_builder'
 
-  autoload :Checker, 'hexlet_code/checker'
+  def self.form_for(entity, **args)
+    form = HexletCode::FormBuilder.new(entity)
+    yield(form)
 
-  def self.form_for(user, args = {})
-    url = args[:url] || '#'
-    method = args[:method] || 'post'
-    Tag.build('form', action: url, method:, **args.slice(:class)) do
-      checker = HexletCode::Checker.new(user)
-      yield(checker)
-      checker.output.join
-    end
+    HexletCode::HtmlBuilder.form(form.children, **args)
   end
 end
