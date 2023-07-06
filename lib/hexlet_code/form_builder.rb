@@ -13,7 +13,6 @@ module HexletCode
     end
 
     def input(name, **html_options)
-      pp @entity.public_send(name)
       @children[:inputs] << { name:, value: @entity.public_send(name), html_options: }
     end
 

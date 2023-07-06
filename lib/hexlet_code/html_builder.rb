@@ -17,7 +17,7 @@ module HexletCode
                 end
         [build_label(elem[:name]), input]
       end
-      submit_tag = children[:submit].present? ? [build_submit(**children[:submit])] : []
+      submit_tag = children[:submit].nil? ? [] : [build_submit(**children[:submit])]
 
       [*input_tags, *submit_tag].join
     end
