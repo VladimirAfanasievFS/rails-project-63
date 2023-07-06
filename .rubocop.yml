@@ -7,6 +7,8 @@ AllCops:
   TargetRubyVersion: 3.1.2
   SuggestExtensions: false
 
+Metrics/BlockLength:
+  IgnoredMethods: ['describe']
 Style/Documentation:
   Enabled: false
 Style/AsciiComments:

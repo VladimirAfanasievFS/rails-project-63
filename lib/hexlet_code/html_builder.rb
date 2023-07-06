@@ -10,7 +10,7 @@ module HexletCode
 
     def self.build_form_content(children)
       input_tags = children[:inputs].flat_map do |elem|
-        input = if elem[:html_options][:as] == :text
+        input = if elem[:as] == :text
                   build_textarea(**elem)
                 else
                   build_input(**elem)
