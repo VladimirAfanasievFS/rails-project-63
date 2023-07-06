@@ -13,7 +13,7 @@ describe 'Assertions' do
     end
 
     expected = "<form action='#' method='post'>" \
-               "<label for='job'>Name</label>" \
+               "<label for='job'>Job</label>" \
                "<textarea name='job' cols='20' rows='40'>hexlet</textarea>" \
                '</form>'
 
